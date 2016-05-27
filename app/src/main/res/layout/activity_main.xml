@@ -1,13 +1,15 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
     <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@drawable/radialgradient"
         android:padding="10dp" >
 
         <TextView
@@ -15,34 +17,78 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Congratulations on taking charge of your health!"
-            android:textColor="#000000" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/anuloma"
             />
 
+        <TextView
+            style="@style/TitleText"
+            android:id="@+id/anulomvilom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Anulom Vilom/Nadi Shodhan" />
+
+
         <ImageView
+            style="@style/imageYoga"
+            android:id="@+id/anuvil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/anuvil"
+            />
+
+        <TextView
+            style="@style/TitleText"
+            android:id="@+id/padmasana"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Padmasan/Lotus Pose" />
+
+
+        <ImageView
+            style="@style/imageYoga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/padmasan"
             />
 
+        <TextView
+            style="@style/TitleText"
+            android:id="@+id/vipareeta"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Vipareeta Karani" />
 
         <ImageView
+            style="@style/imageYoga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/viparitakarani"
             />
 
+        <TextView
+            style="@style/TitleText"
+            android:id="@+id/meru"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Merudanda Mudra" />
+
+
         <ImageView
+            style="@style/imageYoga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/merudanda"
             />
 
+        <TextView
+            style="@style/TitleText"
+            android:id="@+id/breath"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Breath Awareness" />
+
+
         <ImageView
+            style="@style/imageYoga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/breathing"
@@ -58,7 +104,7 @@
             android:id="@+id/alarmprompt"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000000" />
+             />
 
     </LinearLayout>
 </ScrollView>

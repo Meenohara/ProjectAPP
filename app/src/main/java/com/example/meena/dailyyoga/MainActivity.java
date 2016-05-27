@@ -12,6 +12,7 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +25,7 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     TimePicker myTimePicker;
     Button buttonstartSetDialog;
@@ -85,10 +86,10 @@ public class MainActivity extends Activity {
                 // Today Set time passed, count to tomorrow
                 calSet.add(Calendar.DATE, 1);
             }
+            //TODO investigate :not firing alarm after 24 hours
 
             setAlarm(calSet);
-          //  alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calSet.getTimeInMillis(),
-            //        AlarmManager.INTERVAL_DAY, alarmIntent);
+
         }
     };
 
@@ -102,10 +103,13 @@ public class MainActivity extends Activity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
                 getBaseContext(), RQS_1, intent, 0);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        /*alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(),
-                pendingIntent);*/
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(),AlarmManager.INTERVAL_HALF_DAY,
+        alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(),
                 pendingIntent);
+        //alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(),
+                //  1000 * 60 * 60 * 24, pendingIntent);//TODO investigate :Null Pointerexception at time onset
+        //TODO investigate :this is draining on the battery but using setinexactalarm seems to be too inexact proportionally to the interval specified
+        //alarm occassionally does not fire
+        //issue discussed here: http://stackoverflow.com/questions/8445867/alarmmanager-occasionally-doesnt-fire-alarm?rq=1
 
 
     }

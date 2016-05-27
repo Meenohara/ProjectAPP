@@ -1,6 +1,7 @@
 package com.example.meena.dailyyoga;
 
 import android.app.Dialog;
+import android.content.DialogInterface.OnClickListener;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +12,6 @@ import android.net.Uri;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,6 +31,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
 
+        if(notification==null){
+            Log.v("Notification is ", "null");
+        }
+
         AudioManager am = (AudioManager) k1.getSystemService(Context.AUDIO_SERVICE);
         switch (am.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
@@ -49,6 +53,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             final Vibrator v = (Vibrator) k1.getSystemService(Context.VIBRATOR_SERVICE);
             if (v.hasVibrator()) {
                 final long[] pattern = {0, 500, 110, 500, 110, 450, 110, 200, 110, 170, 40, 450, 110, 200, 110, 170, 40, 500};
+                //start war like theme
                 new Thread() {
                     @Override
                     public void run() {
@@ -71,33 +76,12 @@ public class AlarmReceiver extends BroadcastReceiver {
 
                 r = RingtoneManager.getRingtone(k1.getApplicationContext(), notification);
                 r.play();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-            final Dialog dialog = new Dialog(k1);
-            dialog.setContentView(R.layout.alarm);
-            dialog.setTitle("Time for the short Yoga practice");
 
-// set the custom dialog components - text, image and button
-            // TextView text = (TextView) dialog.findViewById(R.id.text);
-            // text.setText("All time is good time for a yoga practice!");
-            ImageView image = (ImageView) dialog.findViewById(R.id.image);
-            image.setImageResource(R.drawable.yoga);
 
-            Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-            // if button is clicked, close the custom dialog
-            // dialogButton.setText("OK");
-            dialogButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                    r.stop();
-                }
-            });
-            dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-            dialog.show();
 
     }
 
