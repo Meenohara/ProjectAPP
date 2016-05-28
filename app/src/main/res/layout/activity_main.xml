@@ -16,7 +16,7 @@
             android:id="@+id/congrats"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Congratulations on taking charge of your health!"
+            android:text="@string/congrats"
             />
 
         <TextView
@@ -24,7 +24,7 @@
             android:id="@+id/anulomvilom"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Anulom Vilom/Nadi Shodhan" />
+            android:text="@string/nadi" />
 
 
         <ImageView
@@ -40,7 +40,7 @@
             android:id="@+id/padmasana"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Padmasan/Lotus Pose" />
+            android:text="@string/padma" />
 
 
         <ImageView
@@ -55,7 +55,7 @@
             android:id="@+id/vipareeta"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Vipareeta Karani" />
+            android:text="@string/vipkar" />
 
         <ImageView
             style="@style/imageYoga"
@@ -69,7 +69,7 @@
             android:id="@+id/meru"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Merudanda Mudra" />
+            android:text="@string/merud" />
 
 
         <ImageView
@@ -84,7 +84,7 @@
             android:id="@+id/breath"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Breath Awareness" />
+            android:text="@string/aware" />
 
 
         <ImageView
@@ -98,7 +98,7 @@
             android:id="@+id/startAlaram"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Set Alarm Time" />
+            android:text="@string/alarm" />
 
         <TextView
             android:id="@+id/alarmprompt"

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DailyYoga</string>
+    <string name="congrats">Congratulations on taking charge of your health!</string>
+    <string name="nadi">Anulom Vilom/Nadi Shodhan</string>
+    <string name="padma">Padmasan/Lotus Pose</string>
+    <string name="vipkar">Vipareeta Karani</string>
+    <string name="merud">Merudanda Mudra</string>
+    <string name="aware">Breath Awareness</string>
+    <string name="alarm">Set Alarm Time</string>
 </resources>

@@ -28,14 +28,15 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context k1, Intent k2) {
         // TODO Auto-generated method stub
         Toast.makeText(k1, "Alarm received!", Toast.LENGTH_LONG).show();
+        AudioManager am = (AudioManager) k1.getSystemService(Context.AUDIO_SERVICE);
 
         notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
 
-        if(notification==null){
+        /*if(notification==null){
             Log.v("Notification is ", "null");
         }
 
-        AudioManager am = (AudioManager) k1.getSystemService(Context.AUDIO_SERVICE);
+
         switch (am.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
                 Log.i("MyApp", "Silent mode");
@@ -46,8 +47,8 @@ public class AlarmReceiver extends BroadcastReceiver {
             case AudioManager.RINGER_MODE_NORMAL:
                 Log.i("MyApp", "Normal mode");
                 break;
-        }
-
+        }*/
+///
         if(notification==null||am.getRingerMode()==AudioManager.RINGER_MODE_VIBRATE) {
 
             final Vibrator v = (Vibrator) k1.getSystemService(Context.VIBRATOR_SERVICE);
@@ -86,3 +87,9 @@ public class AlarmReceiver extends BroadcastReceiver {
     }
 
 }
+//TODO
+//    include file in xml, yoga row
+//        string resources
+//        fillviewreport
+//
+//        putflag in preferences

@@ -19,10 +19,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 
+import java.lang.reflect.Field;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         textAlarmPrompt = (TextView) findViewById(R.id.alarmprompt);
 
         buttonstartSetDialog = (Button) findViewById(R.id.startAlaram);
@@ -89,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
             //TODO investigate :not firing alarm after 24 hours
 
             setAlarm(calSet);
+
+
 
         }
     };
