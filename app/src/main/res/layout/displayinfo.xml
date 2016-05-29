@@ -5,12 +5,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
     <TextView
         android:id="@+id/interpre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:textSize="15sp"
         android:text="Interpretation" />
 
     </ScrollView>

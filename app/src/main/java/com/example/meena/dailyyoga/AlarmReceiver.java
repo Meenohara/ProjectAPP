@@ -1,5 +1,7 @@
 package com.example.meena.dailyyoga;
 
+import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface.OnClickListener;
 import android.content.BroadcastReceiver;
@@ -12,6 +14,7 @@ import android.net.Uri;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,11 +35,9 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
 
-        /*if(notification==null){
-            Log.v("Notification is ", "null");
-        }
+//MainActivity.buttonstartSetDialog.getText();
 
-
+ /*
         switch (am.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
                 Log.i("MyApp", "Silent mode");
@@ -83,13 +84,9 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
 
 
-
     }
 
 }
 //TODO
 //    include file in xml, yoga row
-//        string resources
-//        fillviewreport
-//
 //        putflag in preferences

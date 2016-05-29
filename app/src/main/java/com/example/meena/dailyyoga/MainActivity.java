@@ -171,11 +171,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 //TODO
-//Awareness of Breath- Any time All time- reminder with a question
-//Vajrasan/Veerasan- Post lunch Post dinner- reminder+timer
-//BhrumadhyaDrishti & Nasikagra Drishti- Any time All time- reminder+timer
-//Anuloma Viloma- 6am and 6pm- reminder+timer
-//Vipareetkarani,pranayam-choice- reminder+timer
 //Yoga music optional
 //progress tracking
 //Personalize
