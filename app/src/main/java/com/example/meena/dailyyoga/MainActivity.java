@@ -39,12 +39,23 @@ public class MainActivity extends AppCompatActivity {
     TimePickerDialog timePickerDialog;
     private AlarmManager alarmMgr;
     private PendingIntent alarmIntent;
-
+    ImageView imageView1, imageView2, imageView3, imageView4, imageView5;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*imageView1 = (ImageView) findViewById(R.id.img1);
+        imageView2 = (ImageView) findViewById(R.id.img2);
+        imageView3 = (ImageView) findViewById(R.id.img3);
+        imageView4 = (ImageView) findViewById(R.id.img4);
+        imageView5 = (ImageView) findViewById(R.id.img5);
+
+        imageView1.setOnClickListener(this);
+        imageView2.setOnClickListener(this);
+        imageView3.setOnClickListener(this);*/
+
 
 
 
@@ -119,6 +130,44 @@ public class MainActivity extends AppCompatActivity {
         //issue discussed here: http://stackoverflow.com/questions/8445867/alarmmanager-occasionally-doesnt-fire-alarm?rq=1
 
 
+    }
+
+    public void display(View v) {
+        Intent intent = new Intent(MainActivity.this, DisplayInfo.class);
+        String filename = null;
+        /*TODO replace swutch statement with a better with generic chunk of code for all image views */
+        switch (v.getId()) {
+            case R.id.img1:
+                Log.i("Image1", "Anulom/vilom");
+                filename = "nadi.txt";
+
+                //Start activity one
+                break;
+            case R.id.img2:
+                //Start activiy two
+                Log.i("Image1", "Padmasan");
+                filename = "padma.txt";
+                break;
+            case R.id.img3:
+                //Start activiy two
+                Log.i("Image1", "Padmasan");
+                filename = "vipareet.txt";
+                break;
+            case R.id.img4:
+                //Start activiy two
+                Log.i("Image1", "Padmasan");
+                filename = "dhyan.txt";
+                break;
+            case R.id.img5:
+                //Start activiy two
+                Log.i("Image1", "Padmasan");
+                filename = "brspine.txt";
+
+                break;
+            // Do this for all buttons.
+        }
+        intent.putExtra("STRING_I_NEED", filename);
+        startActivity(intent);
     }
 }
 //TODO
